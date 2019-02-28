@@ -2,7 +2,7 @@ first = input()
 second = input()
 
 def check_str(first, second):
-	if type(first) == str and type(second) == str:
+	if isinstance(first, str) and isinstance(second, str):
 		if first == second:
 			return 1
 		elif first != second and len(first) > len(second):

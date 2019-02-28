@@ -12,8 +12,20 @@ def ask_user():
 		except KeyboardInterrupt:
 			print('Пока!')
 			break
-	print('Пожалуйста, задайте вопрос')
-	user_ques = input('Пользователь: ')
-	if user_ques in questions:
-		print(f'Программа: {questions[user_ques]}') 
+	print('Пожалуйста, задайте вопрос.\nДля завершения программы напишите "задолбал"')
+	user_question = input('Пользователь: ')
+	user_question = user_question.lower()
+	user_question = user_question.strip()
+	while user_question != 'задолбал':
+		if user_question in questions:
+			print(f'Программа: {questions[user_question]}')
+			user_question = input('Пользователь: ')
+			user_question = user_question.lower()
+			user_question = user_question.strip()
+		else:
+			print('не правильный вопрос, попробуй еще раз')
+			user_question = input('Пользователь: ')
+			user_question = user_question.lower()
+			user_question = user_question.strip()
+	print('Пока!')
 ask_user()

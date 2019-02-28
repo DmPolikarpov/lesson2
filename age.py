@@ -1,26 +1,27 @@
 
 your_age = input('Сколько тебе лет: ')
+your_work = ''
 
-def work(your_age):
-	your_work = ''
+def variety_work(your_age):
 	try:
-		your_age = int(your_age)		
+		your_age = int(your_age)
 	except ValueError:
 		return 'ошибка ввода'
-	if 2 <= your_age < 7:
+	if your_age < 0:
+		return 'ошибка ввода'
+	if your_age in range(0, 2):
+		your_work = 'ты - ребенок'		
+	elif your_age in range(2, 7):
 		your_work = 'ты учишься в детском саду'
-	elif 0 <= your_age < 2:
-		your_work = 'ты - ребенок'
-	elif 7 <= your_age < 17:
+	elif your_age in range(7, 18):
 		your_work = 'ты учишься в школе'
-	elif 17 <= your_age < 24:
+	elif your_age in range(18, 24):
 		your_work = 'ты - студент'
-	elif 24 <= your_age < 65:
+	elif your_age in range(24, 65):
 		your_work = 'ты работаешь'
 	else:
 		your_work = 'ты - пенсионер'
 	return your_work
 
-
-a = work(your_age)
+a = variety_work(your_age)
 print(a)

@@ -7,6 +7,7 @@ def get_summ(num_one, num_two):
 		num_two = int(num_two)
 	except ValueError:
 		return 'введенные данные не являются целыми числами'
-	return f'Сумма данных чисел равна: {num_one + num_two}'
+	a = num_one + num_two
+	return f'Сумма данных чисел равна: {a}'
 summ = get_summ(num_one, num_two)
 print(summ) 
