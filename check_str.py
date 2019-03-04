@@ -11,5 +11,7 @@ def check_str(first, second):
 			return 3
 	else:
 		return 0
-a = check_str(first, second)
-print(a)
+
+if __name__ == '__main__':
+	a = check_str(first, second)
+	print(a)

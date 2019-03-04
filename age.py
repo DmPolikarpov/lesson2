@@ -23,5 +23,6 @@ def variety_work(your_age):
 		your_work = 'ты - пенсионер'
 	return your_work
 
-a = variety_work(your_age)
-print(a)
+if __name__ == '__main__':
+	a = variety_work(your_age)
+	print(a)
