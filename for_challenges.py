@@ -25,7 +25,10 @@ is_male = {
 }
 names = ['Оля', 'Петя', 'Вася', 'Маша']
 for name in names:
-	print(name, is_male[name])
+	if is_male[name]:
+		print(name, 'мужской')
+	else:
+		print(name, 'женский')
 
 
 # Задание 4
@@ -54,7 +57,5 @@ groups = [
   ['Вася', 'Маша'],
   ['Оля', 'Петя', 'Гриша'],
 ]
-a = 0
-for i in range(len(groups)):
-	a = i + 1
-	print(f"Группа {a}: {', '.join(groups[i])}")
+for i in enumerate(groups):
+	print(f"Группа {i[0]+1}: {', '.join(i[1])}")

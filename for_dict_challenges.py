@@ -1,4 +1,5 @@
-﻿ # Задание 1
+﻿from collections import Counter
+ # Задание 1
 # Дан список учеников, нужно посчитать количество повторений каждого имени ученика.
 students = [
   {'first_name': 'Вася'},
@@ -11,10 +12,10 @@ students = [
 # Вася: 1
 # Маша: 2
 # Петя: 2
-a = []
+list_students = []
 for i in students:
-  if i not in a:
-    a.append(i)
+  if i not in list_students:
+    list_students.append(i)
     print(f"{i['first_name']}: {students.count(i)}")
 
 
@@ -29,13 +30,13 @@ students = [
 ]
 # Пример вывода:
 # Самое частое имя среди учеников: Маша
-a = 0
-b = []
+count = 0
+dict_number = []
 for i in students:
-  if students.count(i) > a:
+  if students.count(i) > count:
     a = students.count(i)
-    b = i
-print(f"Самое частое имя среди учеников: {b['first_name']}")
+    dict_number = i
+print(f"Самое частое имя среди учеников: {dict_number['first_name']}")
 
 # Задание 3
 # Есть список учеников в нескольких классах, нужно вывести самое частое имя в каждом классе.
@@ -53,14 +54,14 @@ school_students = [
 # Пример вывода:
 # Самое частое имя в классе 1: Вася
 # Самое частое имя в классе 2: Маша
-a = 0
-b = []
+count = 0
+dict_number = []
 for i in school_students:
   for j in i:
-    if i.count(j) > a:
-      a = i.count(j)
-      b = j
-print(f"Самое частое имя среди учеников: {b['first_name']}")
+    if i.count(j) > count:
+      count = i.count(j)
+      dict_number = j
+print(f"Самое частое имя среди учеников: {dict_number['first_name']}")
 
 # Задание 4
 # Для каждого класса нужно вывести количество девочек и мальчиков в нём.
@@ -79,7 +80,7 @@ is_male = {
 # В классе 3c 0 девочки и 2 мальчика.
 
 for i in school:
-  man, woman = 0, 0
+  man = woman = 0
   for j in i['students']:
     if is_male[j['first_name']] == False:
       woman += 1
@@ -103,10 +104,10 @@ is_male = {
 # Пример вывода:
 # Больше всего мальчиков в классе 3c
 # Больше всего девочек в классе 2a
-a,c = 0,0
-b,d = [],[]
+a = c = 0
+b = d = []
 for i in school:
-  man, woman = 0, 0
+  man = woman = 0
   for j in i['students']:
     if is_male[j['first_name']] == False:
       woman += 1
